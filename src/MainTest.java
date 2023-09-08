@@ -45,4 +45,18 @@ public class MainTest {
         String result = Main.Solve(formula);
         Assert.assertEquals("0", result);
     }
+
+    @Test
+    public void testSolveWithZeroDivision() {
+        String formula = "4/0";
+        String result = Main.Solve(formula);
+        Assert.assertEquals("Infinity", result);
+    }
+
+    @Test
+    public void testSolveWithExtraSpaces() {
+        String formula = "  3 +  5 * 2  - 4 ";
+        String result = Main.Solve(formula);
+        Assert.assertEquals("10", result);
+    }
 }
