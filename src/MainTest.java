@@ -73,4 +73,12 @@ public class MainTest {
         String result = Main.Solve(formula);
         Assert.assertEquals("Invalid formula", result);
     }
+
+    @Test
+    public void testProfile(){
+        for(int i = 0;i < 10000000; i++) {
+            String question = Main.MakeFormula();
+            String ret = Main.Solve(question);
+        }
+    }
 }
