@@ -24,4 +24,12 @@ public class MainTest {
         Assert.assertEquals("10", result);
     }
 
+
+    @Test
+    public void testSolveWithDivision() {
+        String formula = "6/2+4";
+        String result = Main.Solve(formula);
+        Assert.assertEquals("7", result);
+    }
+
 }
