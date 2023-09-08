@@ -59,4 +59,18 @@ public class MainTest {
         String result = Main.Solve(formula);
         Assert.assertEquals("10", result);
     }
+
+    @Test
+    public void testSolveWithInvalidCharacters() {
+        String formula = "3+5abc*2-4";
+        String result = Main.Solve(formula);
+        Assert.assertEquals("Invalid formula", result);
+    }
+
+    @Test
+    public void testSolveWithEmptyFormula() {
+        String formula = "";
+        String result = Main.Solve(formula);
+        Assert.assertEquals("Invalid formula", result);
+    }
 }
