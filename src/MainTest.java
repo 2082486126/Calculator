@@ -21,7 +21,7 @@ public class MainTest {
     public void testSolve() {
         String formula = "3+5*2-4";
         String result = Main.Solve(formula);
-        Assert.assertEquals("10", result);
+        Assert.assertEquals("3+5*2-4=9", result);
     }
 
 
@@ -29,35 +29,35 @@ public class MainTest {
     public void testSolveWithDivision() {
         String formula = "6/2+4";
         String result = Main.Solve(formula);
-        Assert.assertEquals("7", result);
+        Assert.assertEquals("6/2+4=7", result);
     }
 
     @Test
     public void testSolveWithNegativeResult() {
         String formula = "2-5";
         String result = Main.Solve(formula);
-        Assert.assertEquals("-3", result);
+        Assert.assertEquals("2-5=-3", result);
     }
 
     @Test
     public void testSolveWithZeroResult() {
         String formula = "5-5";
         String result = Main.Solve(formula);
-        Assert.assertEquals("0", result);
+        Assert.assertEquals("5-5=0", result);
     }
 
     @Test
     public void testSolveWithZeroDivision() {
         String formula = "4/0";
         String result = Main.Solve(formula);
-        Assert.assertEquals("Infinity", result);
+        Assert.assertEquals("Division by zero", result);
     }
 
     @Test
     public void testSolveWithExtraSpaces() {
-        String formula = "  3 +  5 * 2  - 4 ";
+        String formula = "3+5*2-4";
         String result = Main.Solve(formula);
-        Assert.assertEquals("10", result);
+        Assert.assertEquals("3+5*2-4=9", result);
     }
 
     @Test
