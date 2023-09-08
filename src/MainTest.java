@@ -9,4 +9,19 @@ public class MainTest {
         Assert.assertEquals("11+22=33", sum);
     }
 
+    @Test
+    public void testMakeFormula() {
+        String formula = Main.MakeFormula();
+        Assert.assertNotNull(formula);
+        Assert.assertFalse(formula.isEmpty());
+        Assert.assertTrue(formula.matches("\\d+([+\\-*/]\\d+)*")); // 校验是否符合题目要求的格式
+    }
+
+    @Test
+    public void testSolve() {
+        String formula = "3+5*2-4";
+        String result = Main.Solve(formula);
+        Assert.assertEquals("10", result);
+    }
+
 }
