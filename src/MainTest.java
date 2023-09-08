@@ -32,4 +32,17 @@ public class MainTest {
         Assert.assertEquals("7", result);
     }
 
+    @Test
+    public void testSolveWithNegativeResult() {
+        String formula = "2-5";
+        String result = Main.Solve(formula);
+        Assert.assertEquals("-3", result);
+    }
+
+    @Test
+    public void testSolveWithZeroResult() {
+        String formula = "5-5";
+        String result = Main.Solve(formula);
+        Assert.assertEquals("0", result);
+    }
 }
